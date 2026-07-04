@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Printables Stats">
+  <rect width="256" height="256" rx="48" fill="#fa6831"/>
+  <path fill="#fff" d="M50 206V50l78 45v90z"/>
+  <path fill="#fff" opacity=".82" d="M128 95l78-45v90l-78 45z"/>
+  <path fill="#fff" opacity=".55" d="M50 50l78-45 78 45-78 45z" transform="translate(0 45)"/>
+  <path fill="#fa6831" d="M84 146v-40l34 20v40z"/>
+  <path fill="#fa6831" opacity=".8" d="M138 126l34-20v40l-34 20z"/>
+</svg>
