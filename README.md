@@ -2,8 +2,6 @@
 
 Custom integration for Home Assistant that exposes public statistics from a Printables.com user profile as sensors.
 
-> The originally requested `Prointables.com` domain does not appear to expose a public site. This integration targets `Printables.com` and keeps the website/API base URLs configurable.
-
 ## Sensors
 
 - Downloads
@@ -18,7 +16,8 @@ Custom integration for Home Assistant that exposes public statistics from a Prin
 
 ## Installation with HACS
 
-1. Add this repository as a custom HACS repository.
+1. Add this repository as a custom HACS repository: 
+   https://github.com/AWSW-de/Home-Assistant-HACS-Printables-Statistics
 2. Select category `Integration`.
 3. Install `Printables Stats`.
 4. Restart Home Assistant.
@@ -41,6 +40,6 @@ Printables does not publish this API as a stable third-party contract. The integ
 
 ![Printables Stats](Image1.png)
 
-HACS integration for the Prusa Printables user AWSW. =)
+HACS integration from the Prusa Printables user AWSW. =)
 
 You can find my profile and my models here: https://www.printables.com/@AWSW/models
