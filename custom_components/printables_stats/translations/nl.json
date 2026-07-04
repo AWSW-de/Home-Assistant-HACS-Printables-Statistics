@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Printables-statistieken",
+        "description": "Haalt openbare statistiekgegevens op van een Printables-profiel.",
+        "data": {
+          "profile": "Profielnaam of URL",
+          "base_url": "Printables-website-URL",
+          "api_url": "Printables-API-URL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken met Printables.",
+      "profile_not_found": "Het profiel kon niet worden gevonden.",
+      "invalid_response": "Printables gaf een onverwacht antwoord."
+    },
+    "abort": {
+      "already_configured": "Dit Printables-profiel is al geconfigureerd."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "downloads": { "name": "Downloads" },
+      "followers": { "name": "Volgers" },
+      "following": { "name": "Volgend" },
+      "published_models": { "name": "Gepubliceerde modellen" },
+      "paid_models": { "name": "Betaalde modellen" },
+      "store_models": { "name": "Winkelmodellen" },
+      "published_edu_projects": { "name": "Gepubliceerde educatieve projecten" },
+      "published_articles": { "name": "Gepubliceerde artikelen" },
+      "likes_given_models": { "name": "Gegeven model-likes" },
+      "likes_given_edu_projects": { "name": "Gegeven educatieve-project-likes" },
+      "likes_received_models": { "name": "Ontvangen model-likes" },
+      "makes": { "name": "Makes" },
+      "collections": { "name": "Collecties" },
+      "club_members": { "name": "Clubleden" },
+      "profile_level": { "name": "Profielniveau" }
+    }
+  }
+}

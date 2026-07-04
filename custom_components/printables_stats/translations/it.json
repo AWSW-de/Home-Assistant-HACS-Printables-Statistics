@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Statistiche Printables",
+        "description": "Recupera i dati statistici pubblici di un profilo Printables.",
+        "data": {
+          "profile": "Handle o URL del profilo",
+          "base_url": "URL del sito web Printables",
+          "api_url": "URL dell'API Printables"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi a Printables.",
+      "profile_not_found": "Impossibile trovare il profilo.",
+      "invalid_response": "Printables ha restituito una risposta imprevista."
+    },
+    "abort": {
+      "already_configured": "Questo profilo Printables è già configurato."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "downloads": { "name": "Download" },
+      "followers": { "name": "Follower" },
+      "following": { "name": "Seguiti" },
+      "published_models": { "name": "Modelli pubblicati" },
+      "paid_models": { "name": "Modelli a pagamento" },
+      "store_models": { "name": "Modelli nello store" },
+      "published_edu_projects": { "name": "Progetti educativi pubblicati" },
+      "published_articles": { "name": "Articoli pubblicati" },
+      "likes_given_models": { "name": "Mi piace dati ai modelli" },
+      "likes_given_edu_projects": { "name": "Mi piace dati ai progetti educativi" },
+      "likes_received_models": { "name": "Mi piace ricevuti sui modelli" },
+      "makes": { "name": "Makes" },
+      "collections": { "name": "Collezioni" },
+      "club_members": { "name": "Membri del club" },
+      "profile_level": { "name": "Livello profilo" }
+    }
+  }
+}

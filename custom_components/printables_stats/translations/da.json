@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Printables-statistik",
+        "description": "Henter offentlige statistikdata for en Printables-profil.",
+        "data": {
+          "profile": "Profilnavn eller URL",
+          "base_url": "Printables-webstedets URL",
+          "api_url": "Printables-API-URL"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunne ikke oprette forbindelse til Printables.",
+      "profile_not_found": "Profilen blev ikke fundet.",
+      "invalid_response": "Printables returnerede et uventet svar."
+    },
+    "abort": {
+      "already_configured": "Denne Printables-profil er allerede konfigureret."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "downloads": { "name": "Downloads" },
+      "followers": { "name": "Følgere" },
+      "following": { "name": "Følger" },
+      "published_models": { "name": "Publicerede modeller" },
+      "paid_models": { "name": "Betalte modeller" },
+      "store_models": { "name": "Butiksmodeller" },
+      "published_edu_projects": { "name": "Publicerede undervisningsprojekter" },
+      "published_articles": { "name": "Publicerede artikler" },
+      "likes_given_models": { "name": "Givne model-likes" },
+      "likes_given_edu_projects": { "name": "Givne undervisningsprojekt-likes" },
+      "likes_received_models": { "name": "Modtagne model-likes" },
+      "makes": { "name": "Makes" },
+      "collections": { "name": "Samlinger" },
+      "club_members": { "name": "Klubmedlemmer" },
+      "profile_level": { "name": "Profilniveau" }
+    }
+  }
+}
