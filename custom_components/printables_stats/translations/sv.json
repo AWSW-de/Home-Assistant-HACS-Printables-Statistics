@@ -3,18 +3,18 @@
     "step": {
       "user": {
         "title": "Printables-statistik",
-        "description": "Hämtar offentliga statistikdata för en Printables-profil.",
+        "description": "Hämtar offentlig statistik för en Printables-profil.",
         "data": {
-          "profile": "Profilnamn eller URL",
-          "base_url": "Printables-webbplatsens URL",
-          "api_url": "Printables-API-URL"
+          "profile": "Profilhandle eller URL",
+          "base_url": "Printables webbplats-URL",
+          "api_url": "Printables API-URL"
         }
       }
     },
     "error": {
       "cannot_connect": "Kunde inte ansluta till Printables.",
-      "profile_not_found": "Profilen kunde inte hittas.",
-      "invalid_response": "Printables returnerade ett oväntat svar."
+      "profile_not_found": "Printables-profilen kunde inte hittas.",
+      "invalid_response": "Printables returnerade ett ogiltigt svar."
     },
     "abort": {
       "already_configured": "Den här Printables-profilen är redan konfigurerad."
@@ -22,21 +22,21 @@
   },
   "entity": {
     "sensor": {
-      "downloads": { "name": "Nedladdningar" },
-      "followers": { "name": "Följare" },
-      "following": { "name": "Följer" },
-      "published_models": { "name": "Publicerade modeller" },
-      "paid_models": { "name": "Betalda modeller" },
-      "store_models": { "name": "Butiksmodeller" },
-      "published_edu_projects": { "name": "Publicerade utbildningsprojekt" },
-      "published_articles": { "name": "Publicerade artiklar" },
-      "likes_given_models": { "name": "Givna modellgillningar" },
-      "likes_given_edu_projects": { "name": "Givna utbildningsprojektgillningar" },
-      "likes_received_models": { "name": "Mottagna modellgillningar" },
-      "makes": { "name": "Makes" },
-      "collections": { "name": "Samlingar" },
-      "club_members": { "name": "Klubbmedlemmar" },
-      "profile_level": { "name": "Profilnivå" }
+      "downloads": {"name": "Nedladdningar"},
+      "followers": {"name": "Följare"},
+      "following": {"name": "Följer"},
+      "published_models": {"name": "Publicerade modeller"},
+      "paid_models": {"name": "Betalda modeller"},
+      "store_models": {"name": "Butiksmodeller"},
+      "published_edu_projects": {"name": "Publicerade utbildningsprojekt"},
+      "published_articles": {"name": "Publicerade artiklar"},
+      "likes_given_models": {"name": "Givna gilla-markeringar för modeller"},
+      "likes_given_edu_projects": {"name": "Givna gilla-markeringar för utbildningsprojekt"},
+      "likes_received_models": {"name": "Mottagna gilla-markeringar för modeller"},
+      "makes": {"name": "Makes"},
+      "collections": {"name": "Samlingar"},
+      "club_members": {"name": "Klubbmedlemmar"},
+      "profile_level": {"name": "Profilnivå"}
     }
   }
 }

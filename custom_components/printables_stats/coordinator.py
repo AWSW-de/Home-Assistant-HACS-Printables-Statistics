@@ -19,19 +19,9 @@ class PrintablesStatsCoordinator(DataUpdateCoordinator[dict]):
 
     config_entry: ConfigEntry
 
-    def __init__(
-        self,
-        hass: HomeAssistant,
-        client: PrintablesClient,
-        entry: ConfigEntry,
-    ) -> None:
+    def __init__(self, hass: HomeAssistant, client: PrintablesClient, entry: ConfigEntry) -> None:
         """Initialize the coordinator."""
-        super().__init__(
-            hass,
-            logger=_LOGGER,
-            name=DOMAIN,
-            update_interval=DEFAULT_SCAN_INTERVAL,
-        )
+        super().__init__(hass, logger=_LOGGER, name=DOMAIN, update_interval=DEFAULT_SCAN_INTERVAL)
         self.client = client
         self.config_entry = entry
 

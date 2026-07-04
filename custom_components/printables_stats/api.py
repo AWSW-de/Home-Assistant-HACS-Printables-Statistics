@@ -59,6 +59,14 @@ query PrintablesUserSearch($query: String!) {
       verified
     }
   }
+  suggestUsers2(query: $query, limit: 10, offset: 0) {
+    items {
+      id
+      handle
+      publicUsername
+      verified
+    }
+  }
 }
 """
 
@@ -159,7 +167,7 @@ class PrintablesClient:
         return user
 
     async def _async_search_profile_user(self, handle: str) -> dict[str, Any]:
-        """Resolve a profile by handle through Printables quick search."""
+        """Resolve a profile by handle through Printables search endpoints."""
         try:
             response = await self._session.post(
                 f"{self._api_url}/graphql/",
@@ -177,11 +185,13 @@ class PrintablesClient:
         if payload.get("errors"):
             raise InvalidResponse(str(payload["errors"]))
 
-        items = payload.get("data", {}).get("quickSearchUsers", {}).get("items", [])
-        if not isinstance(items, list):
+        data = payload.get("data", {})
+        quick_items = data.get("quickSearchUsers", {}).get("items", [])
+        suggested_items = data.get("suggestUsers2", {}).get("items", [])
+        if not isinstance(quick_items, list) or not isinstance(suggested_items, list):
             raise InvalidResponse("Printables user search returned an invalid response")
 
-        for user in items:
+        for user in [*quick_items, *suggested_items]:
             if not isinstance(user, dict):
                 continue
             if str(user.get("handle", "")).casefold() == handle.casefold():

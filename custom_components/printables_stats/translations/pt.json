@@ -3,18 +3,18 @@
     "step": {
       "user": {
         "title": "Estatísticas do Printables",
-        "description": "Obtém dados estatísticos públicos de um perfil do Printables.",
+        "description": "Obtém estatísticas públicas de um perfil do Printables.",
         "data": {
-          "profile": "Identificador ou URL do perfil",
-          "base_url": "URL do site do Printables",
+          "profile": "Handle ou URL do perfil",
+          "base_url": "URL do site Printables",
           "api_url": "URL da API do Printables"
         }
       }
     },
     "error": {
       "cannot_connect": "Não foi possível ligar ao Printables.",
-      "profile_not_found": "Não foi possível encontrar o perfil.",
-      "invalid_response": "O Printables devolveu uma resposta inesperada."
+      "profile_not_found": "O perfil do Printables não foi encontrado.",
+      "invalid_response": "O Printables devolveu uma resposta inválida."
     },
     "abort": {
       "already_configured": "Este perfil do Printables já está configurado."
@@ -22,21 +22,21 @@
   },
   "entity": {
     "sensor": {
-      "downloads": { "name": "Transferências" },
-      "followers": { "name": "Seguidores" },
-      "following": { "name": "A seguir" },
-      "published_models": { "name": "Modelos publicados" },
-      "paid_models": { "name": "Modelos pagos" },
-      "store_models": { "name": "Modelos da loja" },
-      "published_edu_projects": { "name": "Projetos educativos publicados" },
-      "published_articles": { "name": "Artigos publicados" },
-      "likes_given_models": { "name": "Gostos dados em modelos" },
-      "likes_given_edu_projects": { "name": "Gostos dados em projetos educativos" },
-      "likes_received_models": { "name": "Gostos recebidos em modelos" },
-      "makes": { "name": "Makes" },
-      "collections": { "name": "Coleções" },
-      "club_members": { "name": "Membros do clube" },
-      "profile_level": { "name": "Nível do perfil" }
+      "downloads": {"name": "Transferências"},
+      "followers": {"name": "Seguidores"},
+      "following": {"name": "A seguir"},
+      "published_models": {"name": "Modelos publicados"},
+      "paid_models": {"name": "Modelos pagos"},
+      "store_models": {"name": "Modelos da loja"},
+      "published_edu_projects": {"name": "Projetos educativos publicados"},
+      "published_articles": {"name": "Artigos publicados"},
+      "likes_given_models": {"name": "Gostos dados em modelos"},
+      "likes_given_edu_projects": {"name": "Gostos dados em projetos educativos"},
+      "likes_received_models": {"name": "Gostos recebidos em modelos"},
+      "makes": {"name": "Makes"},
+      "collections": {"name": "Coleções"},
+      "club_members": {"name": "Membros do clube"},
+      "profile_level": {"name": "Nível do perfil"}
     }
   }
 }

@@ -22,21 +22,21 @@
   },
   "entity": {
     "sensor": {
-      "downloads": { "name": "Downloads" },
-      "followers": { "name": "Followers" },
-      "following": { "name": "Following" },
-      "published_models": { "name": "Published models" },
-      "paid_models": { "name": "Paid models" },
-      "store_models": { "name": "Store models" },
-      "published_edu_projects": { "name": "Published edu projects" },
-      "published_articles": { "name": "Published articles" },
-      "likes_given_models": { "name": "Model likes given" },
-      "likes_given_edu_projects": { "name": "Edu project likes given" },
-      "likes_received_models": { "name": "Model likes received" },
-      "makes": { "name": "Makes" },
-      "collections": { "name": "Collections" },
-      "club_members": { "name": "Club members" },
-      "profile_level": { "name": "Profile level" }
+      "downloads": {"name": "Downloads"},
+      "followers": {"name": "Followers"},
+      "following": {"name": "Following"},
+      "published_models": {"name": "Published models"},
+      "paid_models": {"name": "Paid models"},
+      "store_models": {"name": "Store models"},
+      "published_edu_projects": {"name": "Published education projects"},
+      "published_articles": {"name": "Published articles"},
+      "likes_given_models": {"name": "Likes given to models"},
+      "likes_given_edu_projects": {"name": "Likes given to education projects"},
+      "likes_received_models": {"name": "Likes received by models"},
+      "makes": {"name": "Makes"},
+      "collections": {"name": "Collections"},
+      "club_members": {"name": "Club members"},
+      "profile_level": {"name": "Profile level"}
     }
   }
 }

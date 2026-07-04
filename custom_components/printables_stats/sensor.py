@@ -5,11 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from homeassistant.components.sensor import (
-    SensorEntity,
-    SensorEntityDescription,
-    SensorStateClass,
-)
+from homeassistant.components.sensor import SensorEntity, SensorEntityDescription, SensorStateClass
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import EntityCategory
 from homeassistant.core import HomeAssistant
@@ -61,24 +57,16 @@ async def async_setup_entry(
 ) -> None:
     """Set up Printables Stats sensors."""
     coordinator: PrintablesStatsCoordinator = hass.data[DOMAIN][entry.entry_id]
-    async_add_entities(
-        PrintablesStatsSensor(coordinator, description) for description in SENSORS
-    )
+    async_add_entities(PrintablesStatsSensor(coordinator, description) for description in SENSORS)
 
 
-class PrintablesStatsSensor(
-    CoordinatorEntity[PrintablesStatsCoordinator], SensorEntity
-):
+class PrintablesStatsSensor(CoordinatorEntity[PrintablesStatsCoordinator], SensorEntity):
     """A Printables statistics sensor."""
 
     entity_description: PrintablesSensorDescription
     _attr_has_entity_name = True
 
-    def __init__(
-        self,
-        coordinator: PrintablesStatsCoordinator,
-        description: PrintablesSensorDescription,
-    ) -> None:
+    def __init__(self, coordinator: PrintablesStatsCoordinator, description: PrintablesSensorDescription) -> None:
         """Initialize the sensor."""
         super().__init__(coordinator)
         self.entity_description = description
@@ -86,9 +74,7 @@ class PrintablesStatsSensor(
         self._attr_unique_id = f"{user_id}_{description.key}"
         self._attr_device_info = {
             "identifiers": {(DOMAIN, str(user_id))},
-            "name": coordinator.data.get("public_username")
-            or coordinator.data.get("handle")
-            or "Printables",
+            "name": coordinator.data.get("public_username") or coordinator.data.get("handle") or "Printables",
             "manufacturer": "Printables",
             "configuration_url": coordinator.data.get("profile_url"),
         }
