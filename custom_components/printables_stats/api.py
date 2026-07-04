@@ -49,6 +49,27 @@ query PrintablesUserStats($id: ID!) {
 }
 """
 
+USER_SEARCH_QUERY = """
+query PrintablesUserSearch($query: String!) {
+  quickSearchUsers(query: $query) {
+    items {
+      id
+      handle
+      publicUsername
+      verified
+    }
+  }
+}
+"""
+
+REQUEST_HEADERS = {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": (
+        "Mozilla/5.0 (compatible; HomeAssistant-PrintablesStats/0.1; "
+        "+https://www.home-assistant.io/)"
+    ),
+}
+
 
 class PrintablesError(Exception):
     """Base exception for Printables client errors."""
@@ -87,8 +108,13 @@ class PrintablesClient:
     async def async_resolve_profile(self, profile: str) -> PrintablesProfile:
         """Resolve a profile handle or URL to the Printables user id."""
         handle = normalize_profile_handle(profile)
-        profile_url = f"{self._base_url}/@{handle}"
-        user = await self._async_fetch_profile_user(profile_url)
+        try:
+            user = await self._async_search_profile_user(handle)
+        except PrintablesError as err:
+            _LOGGER.debug("GraphQL profile search failed, falling back to page: %s", err)
+            profile_url = f"{self._base_url}/@{handle}"
+            user = await self._async_fetch_profile_user(profile_url)
+
         return PrintablesProfile(
             user_id=str(user["id"]),
             handle=str(user.get("handle") or handle),
@@ -114,7 +140,7 @@ class PrintablesClient:
             response = await self._session.post(
                 f"{self._api_url}/graphql/",
                 json={"query": USER_STATS_QUERY, "variables": {"id": user_id}},
-                headers={"content-type": "application/json"},
+                headers={**REQUEST_HEADERS, "content-type": "application/json"},
                 timeout=20,
             )
             response.raise_for_status()
@@ -132,10 +158,45 @@ class PrintablesClient:
             raise ProfileNotFound("Printables user was not found")
         return user
 
+    async def _async_search_profile_user(self, handle: str) -> dict[str, Any]:
+        """Resolve a profile by handle through Printables quick search."""
+        try:
+            response = await self._session.post(
+                f"{self._api_url}/graphql/",
+                json={"query": USER_SEARCH_QUERY, "variables": {"query": handle}},
+                headers={**REQUEST_HEADERS, "content-type": "application/json"},
+                timeout=20,
+            )
+            response.raise_for_status()
+            payload = await response.json()
+        except (ClientError, TimeoutError) as err:
+            raise CannotConnect("Could not connect to Printables GraphQL") from err
+        except (ClientResponseError, json.JSONDecodeError) as err:
+            raise InvalidResponse("Printables GraphQL returned an invalid response") from err
+
+        if payload.get("errors"):
+            raise InvalidResponse(str(payload["errors"]))
+
+        items = payload.get("data", {}).get("quickSearchUsers", {}).get("items", [])
+        if not isinstance(items, list):
+            raise InvalidResponse("Printables user search returned an invalid response")
+
+        for user in items:
+            if not isinstance(user, dict):
+                continue
+            if str(user.get("handle", "")).casefold() == handle.casefold():
+                return user
+
+        raise ProfileNotFound("Printables profile was not found")
+
     async def _async_fetch_profile_user(self, profile_url: str) -> dict[str, Any]:
         """Fetch the public profile page and extract its embedded user payload."""
         try:
-            response = await self._session.get(profile_url, timeout=20)
+            response = await self._session.get(
+                profile_url,
+                headers=REQUEST_HEADERS,
+                timeout=20,
+            )
             if response.status == 404:
                 raise ProfileNotFound("Printables profile was not found")
             response.raise_for_status()
