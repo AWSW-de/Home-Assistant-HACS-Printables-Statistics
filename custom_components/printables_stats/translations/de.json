@@ -22,51 +22,21 @@
   },
   "entity": {
     "sensor": {
-      "downloads": {
-        "name": "Downloads"
-      },
-      "followers": {
-        "name": "Follower"
-      },
-      "following": {
-        "name": "Folgt"
-      },
-      "published_models": {
-        "name": "Veröffentlichte Modelle"
-      },
-      "paid_models": {
-        "name": "Bezahlmodelle"
-      },
-      "store_models": {
-        "name": "Store-Modelle"
-      },
-      "published_edu_projects": {
-        "name": "Veröffentlichte Edu-Projekte"
-      },
-      "published_articles": {
-        "name": "Veröffentlichte Artikel"
-      },
-      "likes_given_models": {
-        "name": "Vergebene Modell-Likes"
-      },
-      "likes_given_edu_projects": {
-        "name": "Vergebene Edu-Projekt-Likes"
-      },
-      "likes_received_models": {
-        "name": "Erhaltene Modell-Likes"
-      },
-      "makes": {
-        "name": "Makes"
-      },
-      "collections": {
-        "name": "Sammlungen"
-      },
-      "club_members": {
-        "name": "Club-Mitglieder"
-      },
-      "profile_level": {
-        "name": "Profil-Level"
-      }
+      "downloads": { "name": "Downloads" },
+      "followers": { "name": "Follower" },
+      "following": { "name": "Folgt" },
+      "published_models": { "name": "Veröffentlichte Modelle" },
+      "paid_models": { "name": "Bezahlmodelle" },
+      "store_models": { "name": "Store-Modelle" },
+      "published_edu_projects": { "name": "Veröffentlichte Edu-Projekte" },
+      "published_articles": { "name": "Veröffentlichte Artikel" },
+      "likes_given_models": { "name": "Vergebene Modell-Likes" },
+      "likes_given_edu_projects": { "name": "Vergebene Edu-Projekt-Likes" },
+      "likes_received_models": { "name": "Erhaltene Modell-Likes" },
+      "makes": { "name": "Makes" },
+      "collections": { "name": "Sammlungen" },
+      "club_members": { "name": "Club-Mitglieder" },
+      "profile_level": { "name": "Profil-Level" }
     }
   }
 }

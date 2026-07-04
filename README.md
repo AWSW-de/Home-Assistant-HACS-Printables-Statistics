@@ -2,7 +2,7 @@
 
 Custom integration for Home Assistant that exposes public statistics from a Printables.com user profile as sensors.
 
-> The requested `Prointables.com` domain does not appear to expose a public site. This integration targets `Printables.com` and keeps the website/API base URLs configurable.
+> The originally requested `Prointables.com` domain does not appear to expose a public site. This integration targets `Printables.com` and keeps the website/API base URLs configurable.
 
 ## Sensors
 
@@ -26,10 +26,14 @@ Custom integration for Home Assistant that exposes public statistics from a Prin
 
 ## Configuration
 
-Enter a Printables profile handle like `Prusa3D`, `@Prusa3D`, or a profile URL like `https://www.printables.com/@Prusa3D`.
+Enter a Printables profile handle like `AWSW`, `@AWSW`, or a profile URL like `https://www.printables.com/@AWSW`.
 
-The integration resolves the public profile page to a user id, then polls `https://api.printables.com/graphql/` every 30 minutes. No login or token is required for public profile statistics.
+The integration resolves the handle through `https://api.printables.com/graphql/`, then polls public profile statistics every 30 minutes. No login or token is required.
 
 ## Notes
 
-Printables does not publish this API as a stable third-party contract. The integration therefore includes a fallback parser for the public profile page, but future site changes can still require updates.
+Printables does not publish this API as a stable third-party contract. The integration includes a fallback parser for the public profile page, but future site changes can still require updates.
+
+## Icons
+
+HACS uses `brand/icon.png` from the repository root for the store listing. Home Assistant 2026.3 and newer use `custom_components/printables_stats/brand/icon.png` and `logo.png` for the installed integration.

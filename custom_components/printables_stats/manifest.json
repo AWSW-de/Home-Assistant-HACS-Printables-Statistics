@@ -4,9 +4,9 @@
   "codeowners": [],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/custom-components/printables_stats",
+  "documentation": "https://github.com/AWSW-de/Home-Assistant-HACS-Printables-Statistics",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/custom-components/printables_stats/issues",
+  "issue_tracker": "https://github.com/AWSW-de/Home-Assistant-HACS-Printables-Statistics/issues",
   "requirements": [],
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

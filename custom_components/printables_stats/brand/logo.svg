@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Printables Stats">
+  <rect x="8" y="8" width="144" height="144" rx="28" fill="#fa6831"/>
+  <path fill="#fff" d="M38 126V34l46 27v53z"/>
+  <path fill="#fff" opacity=".82" d="M84 61l46-27v53l-46 27z"/>
+  <path fill="#fff" opacity=".55" d="M38 34 84 8l46 26-46 27z" transform="translate(0 26)"/>
+  <text x="184" y="72" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#222">Printables</text>
+  <text x="184" y="120" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="#fa6831">Stats</text>
+</svg>
